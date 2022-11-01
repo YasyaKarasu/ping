@@ -13,6 +13,6 @@ RUN go mod download all && go build -tags netgo -o /pingpong
 
 FROM alpine:3.13.1
 
-COPY --from=builder /ping /ping
+COPY --from=builder /pingpong /pingpong
 
-ENTRYPOINT ["ping"]
+ENTRYPOINT ["/pingpong"]
